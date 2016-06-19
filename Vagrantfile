@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  # config.vm.network "public_network"
+  config.vm.network "public_network", ip: "192.168.0.188"
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
@@ -49,15 +49,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "/Users/mylxsw/codes/php/works/album/trunk/album_v2", "/vagrant/php/works/album_v2"
-  # config.vm.synced_folder "/Users/mylxsw/codes/golang", "/vagrant/go"
-  config.vm.synced_folder "/Users/mylxsw/Vagrants/share", "/vagrant/share"
-  config.vm.synced_folder "/Users/mylxsw/codes/php/aicode", "/vagrant/www"
-  config.vm.synced_folder "/codes/c", "/vagrant/codes/c"
-  config.vm.synced_folder "/codes/eclipse", "/vagrant/codes/eclipse"
-  config.vm.synced_folder "/codes/shell", "/vagrant/codes/shell"
-  config.vm.synced_folder "/codes/work/e-business", "/vagrant/www/e-business"
-  config.vm.synced_folder "/codes/js/react", "/vagrant/www/react"
-  config.vm.synced_folder "/codes/github", "/vagrant/github"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
