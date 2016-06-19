@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "chef/centos-7.0"
-
+  #config.vm.box_url = ""
   config.vm.provision :shell, path: "base.sh"
   config.vm.provision :shell, path: "nginx.sh"
   config.vm.provision :shell, path: "php.sh"

@@ -35,4 +35,10 @@ sudo yum install gcc-c++ -y
 sudo yum install bison -y
 sudo yum install ncurses-devel -y
 
+# 关闭防火墙
+sudo systemctl stop firewalld.service
+sudo systemctl disable firewalld.service
+
 touch /usr/local/vagrant.base.lock
+
+
