@@ -33,40 +33,7 @@ sudo ln -s /usr/local/nginx/conf/nginx.conf /etc/nginx.conf
 cd ~
 echo 'user  vagrant;
 worker_processes  auto;
-
-error_log  logs/error.log;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
-
-    server {
-        listen       80;
-        server_name  localhost;
-        root         html;
-
-        location / {
-            index  index.html index.htm index.php;
-            try_files $uri $uri/ /index.php;
-        }
-
-        location ~ \.php$ {
-            fastcgi_pass   127.0.0.1:9000;
-            fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-            include        fastcgi_params;
-            fastcgi_param  PATH_INFO $fastcgi_script_name;
-		}
-		
-    }
-	include  /www/nginx/vhosts/*.conf
-}' > nginx.conf
+include  /www/lnmp/nginx/conf/nginx.conf;' > nginx.conf
 sudo mv /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.default
 sudo mv nginx.conf /usr/local/nginx/conf/nginx.conf
 #创建启动脚本
