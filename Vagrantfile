@@ -49,7 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "/Users/mylxsw/codes/php/works/album/trunk/album_v2", "/vagrant/php/works/album_v2"
-  config.vm.synced_folder "F:/vagrant/vagrant-lnmp/www", "/www"
+  config.vm.synced_folder "F:/worksapce", "/www"
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:

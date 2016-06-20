@@ -49,7 +49,7 @@ http {
     server {
         listen       80;
         server_name  localhost;
-        root         /www;
+        root         html;
 
         location / {
             index  index.html index.htm index.php;
@@ -65,6 +65,7 @@ http {
 		}
 		
     }
+	include  /www/nginx/vhosts/*.conf
 }' > nginx.conf
 sudo mv /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.default
 sudo mv nginx.conf /usr/local/nginx/conf/nginx.conf
